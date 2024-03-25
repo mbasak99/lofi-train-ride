@@ -1,14 +1,12 @@
 "use client";
 import { useState, FunctionComponent, useEffect } from "react";
 
-const InputRange: FunctionComponent<{ label: string; name: string }> = ({
-  label,
-  name,
-}) => {
-  const [value, setValue] = useState<number>(0);
-  useEffect(() => {
-    // console.log(value);
-  }, [value]);
+const InputRange: FunctionComponent<{
+  label: string;
+  name: string;
+  volume: number;
+  setVolume: (volume: number) => void;
+}> = ({ label, name, volume, setVolume }) => {
   return (
     <span className="flex flex-col gap-4">
       <label htmlFor={name}>{label}: </label>
@@ -19,9 +17,9 @@ const InputRange: FunctionComponent<{ label: string; name: string }> = ({
         title={label}
         min={0}
         max={100}
-        value={value}
+        value={volume}
         onChange={(event) => {
-          setValue(Number(event.target.value));
+          setVolume(Number(event.target.value));
         }}
       />
     </span>
