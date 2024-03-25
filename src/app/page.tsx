@@ -1,6 +1,7 @@
 import Image from "next/image";
-import lofiTrain from "./gif/lofi_train_girl.gif";
+import lofiTrain from "../../static/gif/lofi_train_girl.gif";
 import InputRange from "./components/InputRange";
+import AudioPlayer from "./components/AudioPlayer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           unoptimized={true}
         />
         <div className="flex w-full p-10 flex-col gap-10 input-container">
+          <AudioPlayer />
           <InputRange label="Music" name="music" />
           <InputRange label="Train Ambience" name="train-noise" />
           <InputRange label="Nearby Conversations" name="people-talking" />
