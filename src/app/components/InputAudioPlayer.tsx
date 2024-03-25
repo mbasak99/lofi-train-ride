@@ -10,7 +10,7 @@ const InputAudioPlayer: FunctionComponent<{
   const [volume, setVolume] = useState<number>(0);
   return (
     <>
-      <AudioPlayer volume={volume} />
+      <AudioPlayer volume={volume} isMusic={name === "music"} />
       <InputRange
         label={label}
         name={name}
