@@ -6,17 +6,13 @@ import InputRange from "./InputRange";
 const InputAudioPlayer: FunctionComponent<{
   label: string;
   name: string;
-}> = ({ label, name }) => {
+  url: string;
+}> = ({ label, name, url }) => {
   const [volume, setVolume] = useState<number>(0);
-  const audioMap: { [key: string]: string } = {
-    music: "https://www.youtube.com/watch?v=DbuebKNKQsQ",
-    "train-noise": "static/audio/songs/train-on-tracks.mp3",
-    "people-talking": "static/audio/songs/crowd-talking-1.mp3",
-  };
 
   return (
     <>
-      <AudioPlayer volume={volume} isMusic={name === "music"} />
+      <AudioPlayer volume={volume} isMusic={name === "music"} src={url} />
       <InputRange
         label={label}
         name={name}

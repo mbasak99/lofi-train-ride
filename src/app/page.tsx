@@ -3,6 +3,26 @@ import lofiTrain from "../../static/gif/lofi_train_girl.gif";
 import InputAudioPlayer from "./components/InputAudioPlayer";
 
 export default function Home() {
+  const audioMap: {
+    [key: string]: {
+      url: string;
+      label: string;
+    };
+  } = {
+    music: {
+      url: "static/audio/songs/train-on-tracks.mp3", // https://www.youtube.com/watch?v=DbuebKNKQsQ
+      label: "Music",
+    },
+    // "train-noise": {
+    //   url: "static/audio/songs/train-on-tracks.mp3",
+    //   label: "Train Ambience",
+    // },
+    // "people-talking": {
+    //   url: "static/audio/songs/crowd-talking-1.mp3",
+    //   label: "Nearby Conversations",
+    // },
+  };
+
   return (
     <div className="flex flex-col items-center">
       <main className="flex min-h-screen flex-col items-center gap-8 p-10">
@@ -19,12 +39,15 @@ export default function Home() {
           priority
         />
         <div className="flex w-full p-10 flex-col gap-10 input-container">
-          <InputAudioPlayer label="Music" name="music" />
-          <InputAudioPlayer label="Train Ambience" name="train-noise" />
-          <InputAudioPlayer
-            label="Nearby Conversations"
-            name="people-talking"
-          />
+          {Object.entries(audioMap).map(([key, value]) => (
+            <>
+              <InputAudioPlayer
+                label={value.label}
+                name={key}
+                url={value.url}
+              />
+            </>
+          ))}
         </div>
       </main>
       <footer className="m-10">Made by Monark</footer>
