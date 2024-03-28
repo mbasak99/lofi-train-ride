@@ -8,6 +8,12 @@ const InputAudioPlayer: FunctionComponent<{
   name: string;
 }> = ({ label, name }) => {
   const [volume, setVolume] = useState<number>(0);
+  const audioMap: { [key: string]: string } = {
+    music: "https://www.youtube.com/watch?v=DbuebKNKQsQ",
+    "train-noise": "static/audio/songs/train-on-tracks.mp3",
+    "people-talking": "static/audio/songs/crowd-talking-1.mp3",
+  };
+
   return (
     <>
       <AudioPlayer volume={volume} isMusic={name === "music"} />
