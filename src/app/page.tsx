@@ -16,6 +16,7 @@ export default function Home() {
           className="rounded-lg"
           alt="Lofi Train Ride Animation"
           unoptimized={true}
+          priority
         />
         <div className="flex w-full p-10 flex-col gap-10 input-container">
           <InputAudioPlayer label="Music" name="music" />
