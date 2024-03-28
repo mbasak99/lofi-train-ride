@@ -10,7 +10,7 @@ export default function Home() {
     };
   } = {
     music: {
-      url: "static/audio/songs/train-on-tracks.mp3", // https://www.youtube.com/watch?v=DbuebKNKQsQ
+      url: "https://www.youtube.com/watch?v=DbuebKNKQsQ", // https://www.youtube.com/watch?v=DbuebKNKQsQ
       label: "Music",
     },
     // "train-noise": {

@@ -23,7 +23,7 @@ const AudioPlayer: FunctionComponent<{
     },
     loop: true,
     html5: true,
-    volume: volume / 100,
+    // volume: volume / 100,
   });
   let tapeInsert: Howl;
   let tapeEject: Howl;
